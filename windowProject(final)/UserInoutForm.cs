@@ -15,6 +15,9 @@ namespace windowProject_final_
     {
         private int intID; //ID 필드 설정
         private string strCommand;
+        bool IsSelected = false;
+
+
         //데이터 삭제, 추가, 업데이트 인지를 설정할 문자열 필드
         private OracleConnection odpConn = new OracleConnection();
         public int getintID
@@ -51,23 +54,17 @@ namespace windowProject_final_
             InitializeComponent();
         }
 
-        
-
-        private void seat1_Click(object sender, EventArgs e)
+        private Boolean ClickEvent(int seatnum, bool IsSelected)
         {
-            radioButton1.Checked=true;
-            bool IsSelected = new bool();
-            IsSelected = false;
-
-            //이미 좌석이 선택된 경우
+            //이미 선택된 좌석을 클릭한 경우(퇴실)
             if (IsSelected == true)
             {
                 MessageBox.Show("퇴실하시겠습니까?", "퇴실 확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (DialogResult == DialogResult.OK)
                 {
-                    this.Hide();
-                    MessageBox.Show("1번 좌석 퇴실 처리 되었습니다.\n이용해주셔서 감사합니다,");
+                    MessageBox.Show(Convert.ToString(seatnum),"번 좌석 퇴실 처리 되었습니다.\n이용해주셔서 감사합니다,");
+                    IsSelected = false;
                     MainForm mainform = new MainForm();
                     mainform.Show();
                 }
@@ -77,21 +74,23 @@ namespace windowProject_final_
                     UserJoinForm UserJoinPage = new UserJoinForm();
                     UserJoinPage.Show();
                 }
+
+                //return IsSelected;
             }
 
-            //비어있던 좌석을 선택한 경우
+            //비어있던 좌석을 선택한 경우(입실)
             else if (IsSelected == false)
             {
                 MessageBox.Show("입실하시겠습니까?", "입실 확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (DialogResult == DialogResult.OK)
                 {
+                    this.Hide();
+                    MessageBox.Show("번 좌석에 입실 처리 되었습니다.");
+                    IsSelected = true;
                     MainForm mainform = new MainForm();
                     mainform.Show();
-                    MessageBox.Show("1번 좌석에 입실 처리 되었습니다.");
-                    seat1.BackColor = Color.LightGray;
-                    IsSelected = true;
-                    
+
                 }
                 else if (DialogResult == DialogResult.Cancel)
                 {
@@ -99,361 +98,42 @@ namespace windowProject_final_
                     //UserJoinForm UserJoinPage = new UserJoinForm();
                     //UserJoinPage.Show();
                 }
+                //return IsSelected;
             }
+            return IsSelected;
+        }
+
+        private void SetColor(bool IsSelected)
+        {
+            if (IsSelected == false) //좌석이 선택되지 않은 상태
+            {
+                this.BackColor = Color.PeachPuff;
+                MessageBox.Show("좌석이 선택되지 않았습니다.");
+            }
+            else if (IsSelected == true) //좌석이 선택된 상태
+            {
+                this.BackColor = Color.LightGray;
+                MessageBox.Show("좌석이 선택되었습니다.");
+
+            }
+        }
+
+
+        private void seat1_Click(object sender, EventArgs e)
+        {
+            radioButton1.Checked = true;
+            IsSelected = ClickEvent(1,IsSelected);
+            SetColor(IsSelected);           
         }
 
         private void seat2_Click(object sender, EventArgs e)
         {
-            radioButton2.Checked = true;
-            bool IsSelected = new bool();
-            IsSelected = false;
 
-            if (IsSelected == true)
-            {
-                MessageBox.Show("퇴실하시겠습니까?", "퇴실 확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-                if (DialogResult == DialogResult.OK)
-                {
-                    this.Hide();
-                    MessageBox.Show("2번 좌석 퇴실 처리 되었습니다.\n이용해주셔서 감사합니다,");
-                    MainForm mainform = new MainForm();
-                    mainform.Show();
-                }
-                else if (DialogResult == DialogResult.Cancel)
-                {
-                    this.Hide();
-                    UserJoinForm UserJoinPage = new UserJoinForm();
-                    UserJoinPage.Show();
-                }
-            }
-
-            //비어있던 좌석을 선택한 경우
-            else if (IsSelected == false)
-            {
-                MessageBox.Show("입실하시겠습니까?", "입실 확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-                if (DialogResult == DialogResult.OK)
-                {
-                    MainForm mainform = new MainForm();
-                    mainform.Show();
-                    MessageBox.Show("2번 좌석에 입실 처리 되었습니다.");
-                    seat1.BackColor = Color.LightGray;
-                    IsSelected = true;
-
-                }
-                else if (DialogResult == DialogResult.Cancel)
-                {
-                    this.Hide();
-                    //UserJoinForm UserJoinPage = new UserJoinForm();
-                    //UserJoinPage.Show();
-                }
-            }
-        }
-
-        private void seat3_Click(object sender, EventArgs e)
-        {
-            radioButton3.Checked = true;
-            bool IsSelected = new bool();
-            IsSelected = false;
-
-            if (IsSelected == true)
-            {
-                MessageBox.Show("퇴실하시겠습니까?", "퇴실 확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-                if (DialogResult == DialogResult.OK)
-                {
-                    this.Hide();
-                    MessageBox.Show("3번 좌석 퇴실 처리 되었습니다.\n이용해주셔서 감사합니다,");
-                    MainForm mainform = new MainForm();
-                    mainform.Show();
-                }
-                else if (DialogResult == DialogResult.Cancel)
-                {
-                    this.Hide();
-                    UserJoinForm UserJoinPage = new UserJoinForm();
-                    UserJoinPage.Show();
-                }
-            }
-
-            //비어있던 좌석을 선택한 경우
-            else if (IsSelected == false)
-            {
-                MessageBox.Show("입실하시겠습니까?", "입실 확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-                if (DialogResult == DialogResult.OK)
-                {
-                    MainForm mainform = new MainForm();
-                    mainform.Show();
-                    MessageBox.Show("3번 좌석에 입실 처리 되었습니다.");
-                    seat1.BackColor = Color.LightGray;
-                    IsSelected = true;
-
-                }
-                else if (DialogResult == DialogResult.Cancel)
-                {
-                    this.Hide();
-                    //UserJoinForm UserJoinPage = new UserJoinForm();
-                    //UserJoinPage.Show();
-                }
-            }
-        }
-
-        private void seat4_Click_1(object sender, EventArgs e)
-        {
-            radioButton4.Checked = true;
-            bool IsSelected = new bool();
-            IsSelected = false;
-
-            if (IsSelected == true)
-            {
-                MessageBox.Show("퇴실하시겠습니까?", "퇴실 확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-                if (DialogResult == DialogResult.OK)
-                {
-                    this.Hide();
-                    MessageBox.Show("4번 좌석 퇴실 처리 되었습니다.\n이용해주셔서 감사합니다,");
-                    MainForm mainform = new MainForm();
-                    mainform.Show();
-                }
-                else if (DialogResult == DialogResult.Cancel)
-                {
-                    this.Hide();
-                    UserJoinForm UserJoinPage = new UserJoinForm();
-                    UserJoinPage.Show();
-                }
-            }
-
-            //비어있던 좌석을 선택한 경우
-            else if (IsSelected == false)
-            {
-                MessageBox.Show("입실하시겠습니까?", "입실 확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-                if (DialogResult == DialogResult.OK)
-                {
-                    MainForm mainform = new MainForm();
-                    mainform.Show();
-                    MessageBox.Show("4번 좌석에 입실 처리 되었습니다.");
-                    seat1.BackColor = Color.LightGray;
-                    IsSelected = true;
-
-                }
-                else if (DialogResult == DialogResult.Cancel)
-                {
-                    this.Hide();
-                    //UserJoinForm UserJoinPage = new UserJoinForm();
-                    //UserJoinPage.Show();
-                }
-            }
-        }
-
-        private void seat5_Click(object sender, EventArgs e)
-        {
-            radioButton5.Checked = true;
-            bool IsSelected = new bool();
-            IsSelected = false;
-
-            if (IsSelected == true)
-            {
-                MessageBox.Show("퇴실하시겠습니까?", "퇴실 확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-                if (DialogResult == DialogResult.OK)
-                {
-                    this.Hide();
-                    MessageBox.Show("5번 좌석 퇴실 처리 되었습니다.\n이용해주셔서 감사합니다,");
-                    MainForm mainform = new MainForm();
-                    mainform.Show();
-                }
-                else if (DialogResult == DialogResult.Cancel)
-                {
-                    this.Hide();
-                    UserJoinForm UserJoinPage = new UserJoinForm();
-                    UserJoinPage.Show();
-                }
-            }
-
-            //비어있던 좌석을 선택한 경우
-            else if (IsSelected == false)
-            {
-                MessageBox.Show("입실하시겠습니까?", "입실 확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-                if (DialogResult == DialogResult.OK)
-                {
-                    MainForm mainform = new MainForm();
-                    mainform.Show();
-                    MessageBox.Show("5번 좌석에 입실 처리 되었습니다.");
-                    seat1.BackColor = Color.LightGray;
-                    IsSelected = true;
-
-                }
-                else if (DialogResult == DialogResult.Cancel)
-                {
-                    this.Hide();
-                    //UserJoinForm UserJoinPage = new UserJoinForm();
-                    //UserJoinPage.Show();
-                }
-            }
-        }
-
-        private void seat6_Click(object sender, EventArgs e)
-        {
-            radioButton6.Checked = true;
-            bool IsSelected = new bool();
-            IsSelected = false;
-
-            if (IsSelected == true)
-            {
-                MessageBox.Show("퇴실하시겠습니까?", "퇴실 확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-                if (DialogResult == DialogResult.OK)
-                {
-                    this.Hide();
-                    MessageBox.Show("6번 좌석 퇴실 처리 되었습니다.\n이용해주셔서 감사합니다,");
-                    MainForm mainform = new MainForm();
-                    mainform.Show();
-                }
-                else if (DialogResult == DialogResult.Cancel)
-                {
-                    this.Hide();
-                    UserJoinForm UserJoinPage = new UserJoinForm();
-                    UserJoinPage.Show();
-                }
-            }
-
-            //비어있던 좌석을 선택한 경우
-            else if (IsSelected == false)
-            {
-                MessageBox.Show("입실하시겠습니까?", "입실 확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-                if (DialogResult == DialogResult.OK)
-                {
-                    MainForm mainform = new MainForm();
-                    mainform.Show();
-                    MessageBox.Show("6번 좌석에 입실 처리 되었습니다.");
-                    seat1.BackColor = Color.LightGray;
-                    IsSelected = true;
-
-                }
-                else if (DialogResult == DialogResult.Cancel)
-                {
-                    this.Hide();
-                    //UserJoinForm UserJoinPage = new UserJoinForm();
-                    //UserJoinPage.Show();
-                }
-            }
-        }
-
-        private void seat7_Click(object sender, EventArgs e)
-        {
-            radioButton7.Checked = true;
-            bool IsSelected = new bool();
-            IsSelected = false;
-
-            if (IsSelected == true)
-            {
-                MessageBox.Show("퇴실하시겠습니까?", "퇴실 확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-                if (DialogResult == DialogResult.OK)
-                {
-                    this.Hide();
-                    MessageBox.Show("7번 좌석 퇴실 처리 되었습니다.\n이용해주셔서 감사합니다,");
-                    MainForm mainform = new MainForm();
-                    mainform.Show();
-                }
-                else if (DialogResult == DialogResult.Cancel)
-                {
-                    this.Hide();
-                    UserJoinForm UserJoinPage = new UserJoinForm();
-                    UserJoinPage.Show();
-                }
-            }
-
-            //비어있던 좌석을 선택한 경우
-            else if (IsSelected == false)
-            {
-                MessageBox.Show("입실하시겠습니까?", "입실 확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-                if (DialogResult == DialogResult.OK)
-                {
-                    MainForm mainform = new MainForm();
-                    mainform.Show();
-                    MessageBox.Show("7번 좌석에 입실 처리 되었습니다.");
-                    seat1.BackColor = Color.LightGray;
-                    IsSelected = true;
-
-                }
-                else if (DialogResult == DialogResult.Cancel)
-                {
-                    this.Hide();
-                    //UserJoinForm UserJoinPage = new UserJoinForm();
-                    //UserJoinPage.Show();
-                }
-            }
-        }
-
-        private void seat8_Click(object sender, EventArgs e)
-        {
-            radioButton8.Checked = true;
-            bool IsSelected = new bool();
-            IsSelected = false;
-
-            if (IsSelected == true)
-            {
-                MessageBox.Show("퇴실하시겠습니까?", "퇴실 확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-                if (DialogResult == DialogResult.OK)
-                {
-                    this.Hide();
-                    MessageBox.Show("8번 좌석 퇴실 처리 되었습니다.\n이용해주셔서 감사합니다,");
-                    MainForm mainform = new MainForm();
-                    mainform.Show();
-                }
-                else if (DialogResult == DialogResult.Cancel)
-                {
-                    this.Hide();
-                    UserJoinForm UserJoinPage = new UserJoinForm();
-                    UserJoinPage.Show();
-                }
-            }
-
-            //비어있던 좌석을 선택한 경우
-            else if (IsSelected == false)
-            {
-                MessageBox.Show("입실하시겠습니까?", "입실 확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-                if (DialogResult == DialogResult.OK)
-                {
-                    MainForm mainform = new MainForm();
-                    mainform.Show();
-                    MessageBox.Show("8번 좌석에 입실 처리 되었습니다.");
-                    seat1.BackColor = Color.LightGray;
-                    IsSelected = true;
-
-                }
-                else if (DialogResult == DialogResult.Cancel)
-                {
-                    this.Hide();
-                    //UserJoinForm UserJoinPage = new UserJoinForm();
-                    //UserJoinPage.Show();
-                }
-            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            MainForm mainform = new MainForm();
-            mainform.Show();
-        }
 
-        private void seat9_Click(object sender, EventArgs e)
-        {
-            radioButton9.Checked = true;
-            seat9.BackColor = Color.LightGray;
-        }
-
-        private void UserInoutForm_Load(object sender, EventArgs e)
-        {
-            showDataGridView();
         }
     }
 }

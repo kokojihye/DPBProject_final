@@ -14,72 +14,59 @@ namespace windowProject_final_
 {
     public partial class UserJoinForm : Form
     {
+
+        MainForm mainForm1 = new MainForm();
+
         public UserJoinForm()
         {
             InitializeComponent();
         }
-        FirebaseConfig fbc = new FirebaseConfig()
+        
+        private void JoinBtn_Click(object sender, EventArgs e)
         {
-            AuthSecret = "74wa4lLLYMdKI7R22dI3xOYNnY5UFpznf9zb0htV",
-            BasePath = "https://windowprogramming-final-work-default-rtdb.firebaseio.com/"
-        };
-        IFirebaseClient client;
-        private void LOGIN_button_Click(object sender, EventArgs e)
-        {
-            var result = client.Get("가입자 명단/" + IdBox.Text);
-            Upload upd = result.ResultAs<Upload>();
-
-            Upload upd2 = new Upload()
-            {
-                name = NameBox.Text,
-                id = IdBox.Text,
-                pw = PwChBox.Text
-            };
-            var send = client.Set("가입자 명단/" + IdBox.Text, upd2);
-            this.Hide();
-            MainForm mainform = new MainForm();
-            
-
+           
             String username = NameBox.Text;
-            String userID = IdBox.Text;
-            String userPW = PwChBox.Text;
-            String userPWCK = PwBox.Text;
-
-            if(userPW == userPWCK)
+            String userID = PhoneNumBox.Text;
+            String userPW = PwBox.Text;
+            String userPWCK = PwChBox.Text;
+            if (String.IsNullOrEmpty(NameBox.Text))
             {
-                MessageBox.Show("회원가입 완료!");
-                mainform.Show();
+                MessageBox.Show("이름을 입력해주세요");
+                NameBox.Focus();
             }
-            else
+            else if (String.IsNullOrEmpty(PhoneNumBox.Text))
+            {
+                MessageBox.Show("휴대폰번호를 입력해주세요");
+                PhoneNumBox.Focus();
+            }
+            else if (String.IsNullOrEmpty(PwBox.Text))
+            {
+                MessageBox.Show("비밀번호를 입력해주세요");
+                PwBox.Focus();
+            }
+            else if (String.IsNullOrEmpty(PwChBox.Text))
+            {
+                MessageBox.Show("비밀번호를 다시 입력해주세요");
+                PwChBox.Focus();
+            }
+
+            else if(PwBox.Text != PwChBox.Text)
             {
                 MessageBox.Show("비밀번호가 일치하지 않습니다. 비밀번호를 다시 입력해주세요.");
                 this.Show();
             }
-        }
-
-        private void UserLoginForm_Load(object sender, EventArgs e)
-        {
-            try
+            else
             {
-                client = new FireSharp.FirebaseClient(fbc);
-            }
-            catch
-            {
-                MessageBox.Show("Error!");
+                this.Close();
+                MessageBox.Show("회원가입이 완료되었습니다. 로그인 후 이용해주세요.");
+                mainForm1.Show();
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void GotoMainBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            MainForm mainform = new MainForm();
-            mainform.Show();
+            this.Close();
+            mainForm1.Show();
         }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-
-        }
-        
     }
 }

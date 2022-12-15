@@ -34,9 +34,9 @@ namespace windowProject_final_
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.NameBox = new System.Windows.Forms.TextBox();
-            this.IdBox = new System.Windows.Forms.TextBox();
+            this.PhoneNumBox = new System.Windows.Forms.TextBox();
             this.PwChBox = new System.Windows.Forms.TextBox();
-            this.LoginBtn = new System.Windows.Forms.Button();
+            this.JoinBtn = new System.Windows.Forms.Button();
             this.GotoMainBtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.PwBox = new System.Windows.Forms.TextBox();
@@ -84,14 +84,14 @@ namespace windowProject_final_
             this.NameBox.Size = new System.Drawing.Size(190, 27);
             this.NameBox.TabIndex = 3;
             // 
-            // IdBox
+            // PhoneNumBox
             // 
-            this.IdBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IdBox.Font = new System.Drawing.Font("나눔스퀘어", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.IdBox.Location = new System.Drawing.Point(150, 180);
-            this.IdBox.Name = "IdBox";
-            this.IdBox.Size = new System.Drawing.Size(190, 27);
-            this.IdBox.TabIndex = 4;
+            this.PhoneNumBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PhoneNumBox.Font = new System.Drawing.Font("나눔스퀘어", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.PhoneNumBox.Location = new System.Drawing.Point(150, 180);
+            this.PhoneNumBox.Name = "PhoneNumBox";
+            this.PhoneNumBox.Size = new System.Drawing.Size(190, 27);
+            this.PhoneNumBox.TabIndex = 4;
             // 
             // PwChBox
             // 
@@ -103,17 +103,17 @@ namespace windowProject_final_
             this.PwChBox.Size = new System.Drawing.Size(190, 27);
             this.PwChBox.TabIndex = 5;
             // 
-            // LoginBtn
+            // JoinBtn
             // 
-            this.LoginBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.LoginBtn.Font = new System.Drawing.Font("나눔스퀘어_ac Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.LoginBtn.Location = new System.Drawing.Point(74, 351);
-            this.LoginBtn.Name = "LoginBtn";
-            this.LoginBtn.Size = new System.Drawing.Size(100, 35);
-            this.LoginBtn.TabIndex = 6;
-            this.LoginBtn.Text = "회원가입";
-            this.LoginBtn.UseVisualStyleBackColor = false;
-            this.LoginBtn.Click += new System.EventHandler(this.LOGIN_button_Click);
+            this.JoinBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.JoinBtn.Font = new System.Drawing.Font("나눔스퀘어_ac Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.JoinBtn.Location = new System.Drawing.Point(74, 351);
+            this.JoinBtn.Name = "JoinBtn";
+            this.JoinBtn.Size = new System.Drawing.Size(100, 35);
+            this.JoinBtn.TabIndex = 6;
+            this.JoinBtn.Text = "회원가입";
+            this.JoinBtn.UseVisualStyleBackColor = false;
+            this.JoinBtn.Click += new System.EventHandler(this.JoinBtn_Click);
             // 
             // GotoMainBtn
             // 
@@ -125,7 +125,7 @@ namespace windowProject_final_
             this.GotoMainBtn.TabIndex = 7;
             this.GotoMainBtn.Text = "처음으로";
             this.GotoMainBtn.UseVisualStyleBackColor = false;
-            this.GotoMainBtn.Click += new System.EventHandler(this.button1_Click);
+            this.GotoMainBtn.Click += new System.EventHandler(this.GotoMainBtn_Click);
             // 
             // label4
             // 
@@ -157,10 +157,6 @@ namespace windowProject_final_
             this.label5.TabIndex = 8;
             this.label5.Text = "회원가입";
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // UserJoinForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -169,10 +165,10 @@ namespace windowProject_final_
             this.ClientSize = new System.Drawing.Size(383, 451);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.GotoMainBtn);
-            this.Controls.Add(this.LoginBtn);
+            this.Controls.Add(this.JoinBtn);
             this.Controls.Add(this.PwBox);
             this.Controls.Add(this.PwChBox);
-            this.Controls.Add(this.IdBox);
+            this.Controls.Add(this.PhoneNumBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.NameBox);
             this.Controls.Add(this.label3);
@@ -180,7 +176,6 @@ namespace windowProject_final_
             this.Controls.Add(this.label1);
             this.Name = "UserJoinForm";
             this.Text = "회원가입";
-            this.Load += new System.EventHandler(this.UserLoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,9 +187,9 @@ namespace windowProject_final_
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox NameBox;
-        private System.Windows.Forms.TextBox IdBox;
+        private System.Windows.Forms.TextBox PhoneNumBox;
         private System.Windows.Forms.TextBox PwChBox;
-        private System.Windows.Forms.Button LoginBtn;
+        private System.Windows.Forms.Button JoinBtn;
         private System.Windows.Forms.Button GotoMainBtn;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox PwBox;

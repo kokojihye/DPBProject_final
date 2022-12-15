@@ -17,33 +17,29 @@ namespace windowProject_final_
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void loginbutton_Click(object sender, EventArgs e)
         {
             if (IDtext.Text == "kojihye" && PWtext.Text == "000429")
             {
 
-                this.Hide();
+                
 
                 MainForm mainForm1 = new MainForm();
                 MessageBox.Show("관리자 계정으로 로그인 되었습니다. 감사합니다!");
-
+                this.Hide(); 
                 mainForm1.Show();
+                
 
             }
-
-            else if (IDtext.Text == null)
+            else if (String.IsNullOrEmpty(IDtext.Text))
             {
-                MessageBox.Show("아이디를 입력해주세요.");
+                MessageBox.Show("아이디를 입력해주세요");
+                IDtext.Focus();
             }
-
-            else if (PWtext.Text == null)
+            else if (String.IsNullOrEmpty(PWtext.Text))
             {
-                MessageBox.Show("비밀번호를 입력해주세요.");
+                MessageBox.Show("비밀번호를 입력해주세요");
+                PWtext.Focus();
             }
 
             else

@@ -106,8 +106,7 @@ namespace windowProject_final_
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoginForm";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Text = "Form1";      
             this.ResumeLayout(false);
             this.PerformLayout();
 
