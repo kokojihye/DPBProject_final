@@ -21,19 +21,16 @@ namespace windowProject_final_
         {
             if (IDtext.Text == "kojihye" && PWtext.Text == "000429")
             {
-
-                
-
-                MainForm mainForm1 = new MainForm();
+                StartForm startForm1 = new StartForm();
                 MessageBox.Show("관리자 계정으로 로그인 되었습니다. 감사합니다!");
                 this.Hide(); 
-                mainForm1.Show();
+                startForm1.Show();
                 
 
             }
             else if (String.IsNullOrEmpty(IDtext.Text))
             {
-                MessageBox.Show("아이디를 입력해주세요");
+                MessageBox.Show("관리자 아이디를 입력해주세요");
                 IDtext.Focus();
             }
             else if (String.IsNullOrEmpty(PWtext.Text))

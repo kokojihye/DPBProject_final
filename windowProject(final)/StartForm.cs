@@ -10,25 +10,27 @@ using System.Windows.Forms;
 
 namespace windowProject_final_
 {
-    public partial class MainForm : Form
+    public partial class StartForm : Form
     {
-        public MainForm()
+        public StartForm()
         {
             InitializeComponent();
         }
 
-        private void INOUT_button_Click(object sender, EventArgs e)
+        private void JOIN_button_Click(object sender, EventArgs e)
         {
             this.Dispose();
-            UserInoutForm UserInoutPage = new UserInoutForm();
-            UserInoutPage.Show();
+
+            UserJoinForm UserLoginPage = new UserJoinForm();
+            UserLoginPage.Show();
         }
 
-        private void PURCHASE_button_Click(object sender, EventArgs e)
+        private void LOGIN_button_Click(object sender, EventArgs e)
         {
             this.Dispose();
-            PurchaseForm PurchasePage = new PurchaseForm();
-            PurchasePage.Show();
+
+            UserLoginForm UserLoginPage = new UserLoginForm();
+            UserLoginPage.Show();
         }
     }
 }

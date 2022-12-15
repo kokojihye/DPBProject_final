@@ -29,7 +29,6 @@ namespace windowProject_final_
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,7 +40,8 @@ namespace windowProject_final_
             this.label4 = new System.Windows.Forms.Label();
             this.PwBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnjoin = new System.Windows.Forms.Button();
+            this.btnmain = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -105,27 +105,17 @@ namespace windowProject_final_
             // 
             // JoinBtn
             // 
-            this.JoinBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.JoinBtn.Font = new System.Drawing.Font("나눔스퀘어_ac Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.JoinBtn.Location = new System.Drawing.Point(74, 351);
+            this.JoinBtn.Location = new System.Drawing.Point(0, 0);
             this.JoinBtn.Name = "JoinBtn";
-            this.JoinBtn.Size = new System.Drawing.Size(100, 35);
-            this.JoinBtn.TabIndex = 6;
-            this.JoinBtn.Text = "회원가입";
-            this.JoinBtn.UseVisualStyleBackColor = false;
-            this.JoinBtn.Click += new System.EventHandler(this.JoinBtn_Click);
+            this.JoinBtn.Size = new System.Drawing.Size(75, 23);
+            this.JoinBtn.TabIndex = 12;
             // 
             // GotoMainBtn
             // 
-            this.GotoMainBtn.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.GotoMainBtn.Font = new System.Drawing.Font("나눔스퀘어_ac Bold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.GotoMainBtn.Location = new System.Drawing.Point(194, 351);
+            this.GotoMainBtn.Location = new System.Drawing.Point(0, 0);
             this.GotoMainBtn.Name = "GotoMainBtn";
-            this.GotoMainBtn.Size = new System.Drawing.Size(100, 35);
-            this.GotoMainBtn.TabIndex = 7;
-            this.GotoMainBtn.Text = "처음으로";
-            this.GotoMainBtn.UseVisualStyleBackColor = false;
-            this.GotoMainBtn.Click += new System.EventHandler(this.GotoMainBtn_Click);
+            this.GotoMainBtn.Size = new System.Drawing.Size(75, 23);
+            this.GotoMainBtn.TabIndex = 11;
             // 
             // label4
             // 
@@ -156,13 +146,41 @@ namespace windowProject_final_
             this.label5.Size = new System.Drawing.Size(149, 40);
             this.label5.TabIndex = 8;
             this.label5.Text = "회원가입";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btnjoin
+            // 
+            this.btnjoin.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnjoin.Font = new System.Drawing.Font("나눔스퀘어_ac Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnjoin.Location = new System.Drawing.Point(58, 344);
+            this.btnjoin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnjoin.Name = "btnjoin";
+            this.btnjoin.Size = new System.Drawing.Size(112, 53);
+            this.btnjoin.TabIndex = 9;
+            this.btnjoin.Text = "회원가입";
+            this.btnjoin.UseVisualStyleBackColor = false;
+            this.btnjoin.Click += new System.EventHandler(this.btnjoin_Click);
+            // 
+            // btnmain
+            // 
+            this.btnmain.Font = new System.Drawing.Font("나눔스퀘어_ac Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmain.Location = new System.Drawing.Point(199, 344);
+            this.btnmain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnmain.Name = "btnmain";
+            this.btnmain.Size = new System.Drawing.Size(112, 53);
+            this.btnmain.TabIndex = 10;
+            this.btnmain.Text = "처음으로";
+            this.btnmain.UseVisualStyleBackColor = true;
+            this.btnmain.Click += new System.EventHandler(this.btnmain_Click);
             // 
             // UserJoinForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(383, 451);
+            this.ClientSize = new System.Drawing.Size(382, 453);
+            this.Controls.Add(this.btnjoin);
+            this.Controls.Add(this.btnmain);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.GotoMainBtn);
             this.Controls.Add(this.JoinBtn);
@@ -194,6 +212,7 @@ namespace windowProject_final_
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox PwBox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnjoin;
+        private System.Windows.Forms.Button btnmain;
     }
 }

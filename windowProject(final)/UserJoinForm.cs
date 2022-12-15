@@ -21,10 +21,10 @@ namespace windowProject_final_
         {
             InitializeComponent();
         }
-        
-        private void JoinBtn_Click(object sender, EventArgs e)
+
+        private void btnjoin_Click(object sender, EventArgs e)
         {
-           
+
             String username = NameBox.Text;
             String userID = PhoneNumBox.Text;
             String userPW = PwBox.Text;
@@ -50,7 +50,7 @@ namespace windowProject_final_
                 PwChBox.Focus();
             }
 
-            else if(PwBox.Text != PwChBox.Text)
+            else if (PwBox.Text != PwChBox.Text)
             {
                 MessageBox.Show("비밀번호가 일치하지 않습니다. 비밀번호를 다시 입력해주세요.");
                 this.Show();
@@ -63,10 +63,9 @@ namespace windowProject_final_
             }
         }
 
-        private void GotoMainBtn_Click(object sender, EventArgs e)
+        private void btnmain_Click(object sender, EventArgs e)
         {
-            this.Close();
-            mainForm1.Show();
+
         }
     }
 }

@@ -59,79 +59,170 @@ namespace windowProject_final_
             //이미 선택된 좌석을 클릭한 경우(퇴실)
             if (IsSelected == true)
             {
-                MessageBox.Show("퇴실하시겠습니까?", "퇴실 확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-                if (DialogResult == DialogResult.OK)
+                DialogResult dialogResult = MessageBox.Show("퇴실하시겠습니까?", "퇴실 확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                //퇴실 확인
+                if (dialogResult == DialogResult.OK)
                 {
-                    MessageBox.Show(Convert.ToString(seatnum),"번 좌석 퇴실 처리 되었습니다.\n이용해주셔서 감사합니다,");
+                    MessageBox.Show(Convert.ToString(seatnum)+"번 좌석 퇴실 처리 되었습니다.\n이용해주셔서 감사합니다,");
                     IsSelected = false;
-                    MainForm mainform = new MainForm();
-                    mainform.Show();
-                }
-                else if (DialogResult == DialogResult.Cancel)
-                {
-                    this.Hide();
-                    UserJoinForm UserJoinPage = new UserJoinForm();
-                    UserJoinPage.Show();
-                }
 
-                //return IsSelected;
+                }
+                //퇴실 취소
+                else if (dialogResult == DialogResult.Cancel)
+                {
+                    MessageBox.Show("선택을 취소하였습니다.");
+                    this.Show();
+                }
             }
 
             //비어있던 좌석을 선택한 경우(입실)
             else if (IsSelected == false)
             {
-                MessageBox.Show("입실하시겠습니까?", "입실 확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-                if (DialogResult == DialogResult.OK)
+                DialogResult dialogResult = MessageBox.Show("입실하시겠습니까?", "입실 확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                //입실 확인
+                if (dialogResult == DialogResult.OK)
                 {
-                    MessageBox.Show("번 좌석에 입실 처리 되었습니다.");
+                    MessageBox.Show(Convert.ToString(seatnum)+"번 좌석에 입실 처리 되었습니다.");
                     IsSelected = true;
-                    MainForm mainform = new MainForm();
-                    mainform.Show();
+                    this.Show();
 
                 }
-                else if (DialogResult == DialogResult.Cancel)
+                //입실 취소
+                else if (dialogResult == DialogResult.Cancel)
                 {
-                    this.Hide();
                     MessageBox.Show("선택을 취소하였습니다.");
-                    //UserJoinForm UserJoinPage = new UserJoinForm();
-                    //UserJoinPage.Show();
+                    this.Show();
                 }
-                //return IsSelected;
             }
             return IsSelected;
         }
 
-        private void SetColor(bool IsSelected)
+        private Color SetColor(bool IsSelected)
         {
-            if (IsSelected == false) //좌석이 선택되지 않은 상태
+            Color selectedColor = Color.LightGray;
+            if (IsSelected == false)
             {
-                this.BackColor = Color.PeachPuff;
-                MessageBox.Show("좌석이 선택되지 않았습니다.");
+                selectedColor = Color.PeachPuff;
+                //MessageBox.Show("좌석이 선택되지 않았습니다.");
             }
-            else if (IsSelected == true) //좌석이 선택된 상태
+            else if (IsSelected == true)
             {
-                this.BackColor = Color.LightGray;
-                MessageBox.Show("좌석이 선택되었습니다.");
-
+                selectedColor = Color.LightGray;
+                //MessageBox.Show("좌석이 선택되었습니다.");
             }
+            return selectedColor;
         }
 
 
         private void seat1_Click(object sender, EventArgs e)
         {
             radioButton1.Checked = true;
-            IsSelected = ClickEvent(1,IsSelected);
-            SetColor(IsSelected);           
+            bool IsSelected1 = ClickEvent(1,IsSelected); //clickevent함수로 입실/퇴실 선택
+            seat1.BackColor = SetColor(IsSelected1); //입실퇴실에 따라 좌석 색상 변경
+            IsSelected = IsSelected1;
         }
 
         private void seat2_Click(object sender, EventArgs e)
         {
+            radioButton2.Checked = true;
+            bool IsSelected2 = ClickEvent(2, IsSelected);
+            seat2.BackColor = SetColor(IsSelected2);
+            IsSelected = IsSelected2;
+        }
+
+        private void seat3_Click(object sender, EventArgs e)
+        {
+            radioButton3.Checked = true;
+            bool IsSelected3 = ClickEvent(3, IsSelected);
+            seat3.BackColor = SetColor(IsSelected3);
+            IsSelected = IsSelected3;
+        }
+
+        private void seat4_Click(object sender, EventArgs e)
+        {
+            radioButton4.Checked = true;
+            bool IsSelected4 = ClickEvent(4, IsSelected);
+            seat4.BackColor = SetColor(IsSelected4);
+            IsSelected = IsSelected4;
+        }
+
+        private void seat5_Click(object sender, EventArgs e)
+        {
+            radioButton5.Checked = true;
+            bool IsSelected5 = ClickEvent(5, IsSelected);
+            seat5.BackColor = SetColor(IsSelected5);
+            IsSelected = IsSelected5;
+        }
+
+        private void seat6_Click(object sender, EventArgs e)
+        {
+            radioButton6.Checked = true;
+            bool IsSelected6 = ClickEvent(6, IsSelected);
+            seat6.BackColor = SetColor(IsSelected6);
+            IsSelected = IsSelected6;
+        }
+
+        private void seat7_Click(object sender, EventArgs e)
+        {
+            radioButton7.Checked = true;
+            bool IsSelected7 = ClickEvent(7, IsSelected);
+            seat7.BackColor = SetColor(IsSelected7);
+            IsSelected = IsSelected7;
+        }
+
+        private void seat8_Click(object sender, EventArgs e)
+        {
+            radioButton8.Checked = true;
+            bool IsSelected8 = ClickEvent(8, IsSelected);
+            seat8.BackColor = SetColor(IsSelected8);
+            IsSelected = IsSelected8;
+        }
+
+        private void seat9_Click(object sender, EventArgs e)
+        {
+            radioButton9.Checked = true;
+            bool IsSelected9 = ClickEvent(9, IsSelected);
+            seat9.BackColor = SetColor(IsSelected9);
+            IsSelected = IsSelected9;
+        }
+
+        private void seat10_Click(object sender, EventArgs e)
+        {
+            radioButton10.Checked = true;
+            bool IsSelected10 = ClickEvent(10, IsSelected);
+            seat10.BackColor = SetColor(IsSelected10);
+            IsSelected = IsSelected10;
+        }
+        private void seat11_Click(object sender, EventArgs e)
+        {
+            radioButton11.Checked = true;
+            bool IsSelected11 = ClickEvent(11, IsSelected);
+            seat11.BackColor = SetColor(IsSelected11);
+            IsSelected = IsSelected11;
+        }
+
+        private void seat12_Click(object sender, EventArgs e)
+        {
+            radioButton12.Checked = true;
+            bool IsSelected12 = ClickEvent(12, IsSelected);
+            seat12.BackColor = SetColor(IsSelected12);
+            IsSelected = IsSelected12;
+        }
+
+        private void seat13_Click(object sender, EventArgs e)
+        {
+            radioButton13.Checked = true;
+            bool IsSelected13 = ClickEvent(13, IsSelected);
+            seat13.BackColor = SetColor(IsSelected13);
+            IsSelected = IsSelected13;
+        }
+
+        private void gotomainBtn_Click(object sender, EventArgs e)
+        {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void logoutBtn_Click(object sender, EventArgs e)
         {
 
         }

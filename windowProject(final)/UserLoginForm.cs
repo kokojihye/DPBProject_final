@@ -50,23 +50,22 @@ namespace windowProject_final_
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Dispose();
             MainForm mainform = new MainForm();
             mainform.Show();
         }
 
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void UserLoginForm_Load(object sender, EventArgs e)
         {
-            try
-            {
-                client = new FireSharp.FirebaseClient(fbc);
-            }
-            catch
-            {
-                MessageBox.Show("Error!");
-            }
+
         }
     }
 }
