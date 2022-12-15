@@ -30,26 +30,5 @@ namespace windowProject_final_
             PurchaseForm PurchasePage = new PurchaseForm();
             PurchasePage.Show();
         }
-
-        private void JOIN_button_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-
-            UserJoinForm UserLoginPage = new UserJoinForm();
-            UserLoginPage.Show();
-        }
-
-        private void LOGIN_button_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-
-            UserLoginForm UserLoginPage = new UserLoginForm();
-            UserLoginPage.Show();
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

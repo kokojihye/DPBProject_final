@@ -158,7 +158,7 @@ namespace windowProject_final_
 
             if (IsSelected == true)
             {
-                MessageBox.Show("퇴실하시겠습니까?", "퇴실 확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                DialogResult dialogResult = MessageBox.Show("퇴실하시겠습니까?", "퇴실 확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (DialogResult == DialogResult.OK)
                 {
@@ -215,7 +215,7 @@ namespace windowProject_final_
                     MainForm mainform = new MainForm();
                     mainform.Show();
                 }
-                else if (DialogResult == DialogResult.Cancel)
+                else if (dialogResult == DialogResult.Cancel)
                 {
                     this.Hide();
                     UserJoinForm UserJoinPage = new UserJoinForm();
@@ -274,9 +274,9 @@ namespace windowProject_final_
             //비어있던 좌석을 선택한 경우
             else if (IsSelected == false)
             {
-                MessageBox.Show("입실하시겠습니까?", "입실 확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                DialogResult dialogResult = MessageBox.Show("입실하시겠습니까?", "입실 확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
-                if (DialogResult == DialogResult.OK)
+                if (dialogResult == DialogResult.OK)
                 {
                     MainForm mainform = new MainForm();
                     mainform.Show();
@@ -333,7 +333,7 @@ namespace windowProject_final_
                     IsSelected = true;
 
                 }
-                else if (DialogResult == DialogResult.Cancel)
+                else if (dialogResult == DialogResult.Cancel)
                 {
                     this.Hide();
                     //UserJoinForm UserJoinPage = new UserJoinForm();
