@@ -33,6 +33,17 @@ namespace windowProject_final_
                 MessageBox.Show("관리자 계정으로 로그인 되었습니다. 감사합니다!");
 
                 mainForm1.Show();
+
+            }
+
+            else if (IDtext.Text == null)
+            {
+                MessageBox.Show("아이디를 입력해주세요.");
+            }
+
+            else if (PWtext.Text == null)
+            {
+                MessageBox.Show("비밀번호를 입력해주세요.");
             }
 
             else
