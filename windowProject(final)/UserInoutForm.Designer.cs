@@ -236,6 +236,7 @@ namespace windowProject_final_
             this.selectbox.TabIndex = 2;
             this.selectbox.TabStop = false;
             this.selectbox.Text = "좌석 선택";
+            this.selectbox.Enter += new System.EventHandler(this.selectbox_Enter);
             // 
             // seat13
             // 

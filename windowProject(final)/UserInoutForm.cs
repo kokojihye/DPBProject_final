@@ -226,5 +226,10 @@ namespace windowProject_final_
         {
 
         }
+
+        private void selectbox_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

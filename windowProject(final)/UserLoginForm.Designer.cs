@@ -57,7 +57,7 @@ namespace windowProject_final_
             this.logoutBtn.Name = "logoutBtn";
             this.logoutBtn.Size = new System.Drawing.Size(112, 53);
             this.logoutBtn.TabIndex = 11;
-            this.logoutBtn.Text = "로그아웃";
+            this.logoutBtn.Text = "로그인";
             this.logoutBtn.UseVisualStyleBackColor = false;
             this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 

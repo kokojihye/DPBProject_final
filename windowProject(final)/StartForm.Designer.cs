@@ -104,11 +104,9 @@ namespace windowProject_final_
             this.LOGIN_button.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.LOGIN_button.Location = new System.Drawing.Point(341, 119);
             this.LOGIN_button.Name = "LOGIN_button";
-            this.LOGIN_button.Padding = new System.Windows.Forms.Padding(0, 0, 0, 30);
             this.LOGIN_button.Size = new System.Drawing.Size(190, 155);
             this.LOGIN_button.TabIndex = 10;
             this.LOGIN_button.Text = "로그인";
-            this.LOGIN_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.LOGIN_button.UseVisualStyleBackColor = false;
             this.LOGIN_button.Click += new System.EventHandler(this.LOGIN_button_Click);
             // 
@@ -119,11 +117,9 @@ namespace windowProject_final_
             this.JOIN_button.Font = new System.Drawing.Font("나눔스퀘어_ac Bold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.JOIN_button.Location = new System.Drawing.Point(341, 362);
             this.JOIN_button.Name = "JOIN_button";
-            this.JOIN_button.Padding = new System.Windows.Forms.Padding(0, 0, 0, 30);
             this.JOIN_button.Size = new System.Drawing.Size(190, 155);
             this.JOIN_button.TabIndex = 9;
             this.JOIN_button.Text = "회원가입";
-            this.JOIN_button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.JOIN_button.UseVisualStyleBackColor = false;
             this.JOIN_button.Click += new System.EventHandler(this.JOIN_button_Click);
             // 
