@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Oracle.DataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,39 @@ namespace windowProject_final_
 {
     public partial class UserInoutForm : Form
     {
+        private int intID; //ID 필드 설정
+        private string strCommand;
+        //데이터 삭제, 추가, 업데이트 인지를 설정할 문자열 필드
+        private OracleConnection odpConn = new OracleConnection();
+        public int getintID
+        { get { return intID; } }
+        public string getstrCommand
+        { get { return strCommand; } }
+        private void showDataGridView() //사용자 정의 함수
+        {
+            try
+            {
+                odpConn.ConnectionString = "User Id=kim1; Password=1111; Data Source=(DESCRIPTION =   (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))   (CONNECT_DATA =     (SERVER = DEDICATED)     (SERVICE_NAME = xe)   ) );";
+
+
+                odpConn.Open();
+                OracleDataAdapter oda = new OracleDataAdapter();
+                oda.SelectCommand = new OracleCommand("SELECT * from users", odpConn);
+                DataTable dt = new DataTable();
+                oda.Fill(dt);
+                odpConn.Close();
+                DBGrid.DataSource = dt;
+                DBGrid.AutoResizeColumns();
+                DBGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                DBGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                DBGrid.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("에러 발생 : " + ex.ToString());
+                odpConn.Close();
+            }
+        }
         public UserInoutForm()
         {
             InitializeComponent();
@@ -415,6 +449,11 @@ namespace windowProject_final_
         {
             radioButton9.Checked = true;
             seat9.BackColor = Color.LightGray;
+        }
+
+        private void UserInoutForm_Load(object sender, EventArgs e)
+        {
+            showDataGridView();
         }
     }
 }
