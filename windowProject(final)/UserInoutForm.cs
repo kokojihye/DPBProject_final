@@ -85,7 +85,6 @@ namespace windowProject_final_
 
                 if (DialogResult == DialogResult.OK)
                 {
-                    this.Hide();
                     MessageBox.Show("번 좌석에 입실 처리 되었습니다.");
                     IsSelected = true;
                     MainForm mainform = new MainForm();
@@ -95,6 +94,7 @@ namespace windowProject_final_
                 else if (DialogResult == DialogResult.Cancel)
                 {
                     this.Hide();
+                    MessageBox.Show("선택을 취소하였습니다.");
                     //UserJoinForm UserJoinPage = new UserJoinForm();
                     //UserJoinPage.Show();
                 }
