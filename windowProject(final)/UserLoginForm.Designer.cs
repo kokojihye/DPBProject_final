@@ -47,7 +47,7 @@ namespace windowProject_final_
             this.로그인.Controls.Add(this.IdBox);
             this.로그인.Controls.Add(this.label2);
             this.로그인.Controls.Add(this.label1);
-            this.로그인.Font = new System.Drawing.Font("나눔스퀘어_ac Bold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.로그인.Font = new System.Drawing.Font("배달의민족 도현", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.로그인.Location = new System.Drawing.Point(42, 25);
             this.로그인.Name = "로그인";
             this.로그인.Size = new System.Drawing.Size(272, 241);
@@ -82,14 +82,14 @@ namespace windowProject_final_
             this.PwBox.Location = new System.Drawing.Point(102, 107);
             this.PwBox.Name = "PwBox";
             this.PwBox.PasswordChar = '*';
-            this.PwBox.Size = new System.Drawing.Size(131, 24);
+            this.PwBox.Size = new System.Drawing.Size(131, 26);
             this.PwBox.TabIndex = 3;
             // 
             // IdBox
             // 
             this.IdBox.Location = new System.Drawing.Point(102, 54);
             this.IdBox.Name = "IdBox";
-            this.IdBox.Size = new System.Drawing.Size(131, 24);
+            this.IdBox.Size = new System.Drawing.Size(131, 26);
             this.IdBox.TabIndex = 2;
             // 
             // label2
@@ -97,18 +97,18 @@ namespace windowProject_final_
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(35, 110);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 17);
+            this.label2.Size = new System.Drawing.Size(68, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "비밀번호";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 57);
+            this.label1.Location = new System.Drawing.Point(22, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 17);
+            this.label1.Size = new System.Drawing.Size(83, 18);
             this.label1.TabIndex = 0;
-            this.label1.Text = "아이디";
+            this.label1.Text = "휴대폰번호";
             // 
             // UserLoginForm
             // 

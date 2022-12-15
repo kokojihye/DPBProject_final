@@ -14,6 +14,9 @@ namespace windowProject_final_
 {
     public partial class UserJoinForm : Form
     {
+
+        MainForm mainForm1 = new MainForm();
+
         public UserJoinForm()
         {
             InitializeComponent();
@@ -69,16 +72,23 @@ namespace windowProject_final_
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            MainForm mainform = new MainForm();
-            mainform.Show();
+            else if(PwBox.Text != PwChBox.Text)
+            {
+                MessageBox.Show("비밀번호가 일치하지 않습니다. 비밀번호를 다시 입력해주세요.");
+                this.Show();
+            }
+            else
+            {
+                this.Close();
+                MessageBox.Show("회원가입이 완료되었습니다. 로그인 후 이용해주세요.");
+                mainForm1.Show();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
+            this.Close();
+            mainForm1.Show();
         }
         
     }

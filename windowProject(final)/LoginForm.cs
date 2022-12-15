@@ -22,7 +22,7 @@ namespace windowProject_final_
             if (IDtext.Text == "kojihye" && PWtext.Text == "000429")
             {
 
-                this.Close();
+                
 
                 MainForm mainForm1 = new MainForm();
                 MessageBox.Show("관리자 계정으로 로그인 되었습니다. 감사합니다!");
