@@ -34,7 +34,7 @@ namespace windowProject_final_
             this.label1 = new System.Windows.Forms.Label();
             this.PWtext = new System.Windows.Forms.TextBox();
             this.IDtext = new System.Windows.Forms.TextBox();
-            this.loginbutton = new System.Windows.Forms.Button();
+            this.loginBTN = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label3
@@ -82,15 +82,15 @@ namespace windowProject_final_
             this.IDtext.Size = new System.Drawing.Size(191, 25);
             this.IDtext.TabIndex = 7;
             // 
-            // loginbutton
+            // loginBTN
             // 
-            this.loginbutton.Location = new System.Drawing.Point(378, 101);
-            this.loginbutton.Name = "loginbutton";
-            this.loginbutton.Size = new System.Drawing.Size(108, 70);
-            this.loginbutton.TabIndex = 6;
-            this.loginbutton.Text = "login";
-            this.loginbutton.UseVisualStyleBackColor = true;
-            this.loginbutton.Click += new System.EventHandler(this.loginbutton_Click);
+            this.loginBTN.Location = new System.Drawing.Point(378, 101);
+            this.loginBTN.Name = "loginBTN";
+            this.loginBTN.Size = new System.Drawing.Size(108, 70);
+            this.loginBTN.TabIndex = 6;
+            this.loginBTN.Text = "login";
+            this.loginBTN.UseVisualStyleBackColor = true;
+            this.loginBTN.Click += new System.EventHandler(this.loginBTN_Click);
             // 
             // LoginForm
             // 
@@ -102,12 +102,11 @@ namespace windowProject_final_
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PWtext);
             this.Controls.Add(this.IDtext);
-            this.Controls.Add(this.loginbutton);
+            this.Controls.Add(this.loginBTN);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LoginForm";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,7 +119,7 @@ namespace windowProject_final_
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox PWtext;
         private System.Windows.Forms.TextBox IDtext;
-        private System.Windows.Forms.Button loginbutton;
+        private System.Windows.Forms.Button loginBTN;
     }
 }
 
